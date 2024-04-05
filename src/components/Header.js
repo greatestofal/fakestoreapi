@@ -38,12 +38,45 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* General Products */}
-        <Link to={"/all-products"} className="float-right">
-          <div className="font-bold mt-2">
-            <h1> All Products</h1>
-          </div>
-        </Link>
+        {/* Other Links */}
+        <div className="flex flex-row gap-6 ">
+          {/* General Products */}
+          <Link
+            to={"/all-products"}
+            className="hover:bg-white p-3 rounded font-bold"
+          >
+            <div className="font-bold mt-2">
+              <h1> All Products</h1>
+            </div>
+          </Link>
+          {/* Women Products */}
+          <Link
+            to={"/women-products"}
+            className="hover:bg-white p-3 rounded font-bold"
+          >
+            <div className="font-bold mt-2">
+              <h1> Women</h1>
+            </div>
+          </Link>
+          {/* Men Products */}
+          <Link
+            to={"/men-products"}
+            className="hover:bg-white p-3 rounded font-bold"
+          >
+            <div className="font-bold mt-2">
+              <h1> Men </h1>
+            </div>
+          </Link>
+          {/* Electronics */}
+          <Link
+            to={"/electronics"}
+            className="hover:bg-white p-3 rounded font-bold"
+          >
+            <div className="font-bold mt-2">
+              <h1> Electronics </h1>
+            </div>
+          </Link>
+        </div>
 
         {/* cart */}
         <div
