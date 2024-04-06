@@ -27,6 +27,7 @@ module.exports = {
         women: "url('./img/smilingwoman.jpg')",
         men: "url('./img/shoppingman.jpg')",
         electronics: "url('./img/gen2.jpg')",
+        jewelry: "url('./img/jewerly.jpg')",
       },
     },
   },

@@ -27,7 +27,7 @@ const Header = () => {
   return (
     <header
       className={` ${
-        isActive ? "bg-white py-3 shadow-md" : "bg-red-300 py-6"
+        isActive ? "bg-white py-3 shadow-md" : "bg-[#667fff] py-6"
       } fixed w-full z-10 transition-all`}
     >
       <div className="container flex mx-auto flexitems-center justify-between h-full">
@@ -39,11 +39,11 @@ const Header = () => {
         </Link>
 
         {/* Other Links */}
-        <div className="flex flex-row gap-6 ">
+        <div className="flex flex-row gap-12 ">
           {/* General Products */}
           <Link
             to={"/all-products"}
-            className="hover:bg-white p-3 rounded font-bold"
+            className="hover:bg-white hover:p-3 rounded font-bold"
           >
             <div className="font-bold mt-2">
               <h1> All Products</h1>
@@ -52,7 +52,7 @@ const Header = () => {
           {/* Women Products */}
           <Link
             to={"/women-products"}
-            className="hover:bg-white p-3 rounded font-bold"
+            className="hover:bg-white hover:p-3 rounded font-bold"
           >
             <div className="font-bold mt-2">
               <h1> Women</h1>
@@ -61,7 +61,7 @@ const Header = () => {
           {/* Men Products */}
           <Link
             to={"/men-products"}
-            className="hover:bg-white p-3 rounded font-bold"
+            className="hover:bg-white hover:p-3 rounded font-bold"
           >
             <div className="font-bold mt-2">
               <h1> Men </h1>
@@ -70,22 +70,42 @@ const Header = () => {
           {/* Electronics */}
           <Link
             to={"/electronics"}
-            className="hover:bg-white p-3 rounded font-bold"
+            className="hover:bg-white hover:p-3 rounded font-bold"
           >
             <div className="font-bold mt-2">
               <h1> Electronics </h1>
             </div>
           </Link>
+          {/* Jewelry */}
+          <Link
+            to={"/jewelries"}
+            className="hover:bg-white hover:p-3 rounded font-bold"
+          >
+            <div className="font-bold mt-2">
+              <h1> Jewelry </h1>
+            </div>
+          </Link>
+        </div>
+
+        {/* Admin */}
+        <div className="justify-end">
+          <Link to={"/admin"}>
+            <div className="font-bold mt-2">
+              <h1> Admin </h1>
+            </div>
+          </Link>
         </div>
 
         {/* cart */}
-        <div
-          onClick={() => setIsOpen(!isOpen)}
-          className="cursor-pointer flex relative"
-        >
-          <BsBag className="text-2xl " />
-          <div className="bg-red-500 absolute -right-2 -bottom-0 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
-            {itemAmount}
+        <div>
+          <div
+            onClick={() => setIsOpen(!isOpen)}
+            className="cursor-pointer flex relative"
+          >
+            <BsBag className="text-2xl " />
+            <div className="bg-red-500 absolute -right-2 -bottom-3 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center ">
+              {itemAmount}
+            </div>
           </div>
         </div>
       </div>

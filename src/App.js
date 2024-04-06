@@ -10,6 +10,10 @@ import GeneralProducts from "./components/GeneralProducts";
 import Women from "./components/Women";
 import Men from "./components/Men";
 import Electronics from "./components/Electronics";
+import Jewelry from "./components/Jewelry";
+import Admin from "./components/Admin";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const App = () => {
   return (
@@ -23,6 +27,10 @@ const App = () => {
           <Route path="/women-products" element={<Women />} />
           <Route path="/men-products" element={<Men />} />
           <Route path="/electronics" element={<Electronics />} />
+          <Route path="/jewelries" element={<Jewelry />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Sidebar />
         <Footer />
