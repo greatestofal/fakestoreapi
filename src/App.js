@@ -14,6 +14,7 @@ import Jewelry from "./components/Jewelry";
 import Admin from "./components/Admin";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import UserForm from "./components/UserForm";
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/userform" element={<UserForm />} />
         </Routes>
         <Sidebar />
         <Footer />

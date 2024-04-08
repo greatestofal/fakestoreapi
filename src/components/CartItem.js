@@ -61,13 +61,11 @@ const CartItem = ({ item }) => {
             </div>
             {/* Item price */}
             <div className="flex flex-1 items-center justify-around">
-              {" "}
               $ {price}
             </div>
             {/* final price*/}
             {/* make the price 2 decimals */}
             <div className="flex-1 flex items-center justify-end text-primary font-medium">
-              {" "}
               {`$ ${parseFloat(price * amount).toFixed(2)}`}
             </div>
           </div>

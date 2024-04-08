@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import UserForm from "./UserForm";
 
 const Admin = () => {
   const [users, setUsers] = useState([]);
+  const [formData, setFormData] = useState({
+    email: "",
+    username: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    city: "",
+    street: "",
+    number: "",
+    zipcode: "",
+    lat: "",
+    long: "",
+    phone: "",
+  });
 
   useEffect(() => {
     axios
@@ -12,46 +27,41 @@ const Admin = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const getSingleUser = (id) => {
-    axios
-      .get(`https://fakestoreapi.com/users/${id}`)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const addUser = (user) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios
-      .post("https://fakestoreapi.com/users", user)
+      .post("https://fakestoreapi.com/users", formData)
       .then((res) => {
         console.log("User added:", res.data);
         // Update the users state or handle the response as needed
+        setUsers([...users, res.data]); // Add new user to the users state
       })
       .catch((err) => console.log(err));
-  };
 
-  const updateUser = (id, user) => {
-    axios
-      .put(`https://fakestoreapi.com/users/${id}`, user)
-      .then((res) => {
-        console.log("User updated:", res.data);
-        // Update the users state or handle the response as needed
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const deleteUser = (id) => {
-    axios
-      .delete(`https://fakestoreapi.com/users/${id}`)
-      .then(() => {
-        console.log("User deleted successfully");
-        // Update the users state or handle the response as needed
-      })
-      .catch((err) => console.log(err));
+    // Clear the form after submission
+    setFormData({
+      email: "",
+      username: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      city: "",
+      street: "",
+      number: "",
+      zipcode: "",
+      lat: "",
+      long: "",
+      phone: "",
+    });
   };
 
   return (
     <div className="mt-20">
-      <nav className="bg-gray-500 p-4 flex items-center justify-between ">
+      <nav className="bg-gray-800 p-4 flex items-center justify-between ">
         <div>
           <h1 className="text-white text-xl font-semibold">User Management</h1>
         </div>
@@ -69,7 +79,7 @@ const Admin = () => {
               <li>
                 <div
                   className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => addUser()}
+                  onClick={() => console.log("Add User clicked")}
                 >
                   <div className="flex items-center">
                     <i className="fas fa-calendar-alt mr-2"></i>
@@ -78,10 +88,7 @@ const Admin = () => {
                 </div>
               </li>
               <li>
-                <div
-                  className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => getSingleUser()}
-                >
+                <div className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer">
                   <div className="flex items-center">
                     <i className="fas fa-money-bill-wave mr-2"></i>
                     <span>Edit User</span>
@@ -89,10 +96,7 @@ const Admin = () => {
                 </div>
               </li>
               <li>
-                <div
-                  className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => updateUser()}
-                >
+                <div className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer">
                   <div className="flex items-center">
                     <i className="fas fa-chart-bar mr-2"></i>
                     <span>Update User</span>
@@ -100,10 +104,7 @@ const Admin = () => {
                 </div>
               </li>
               <li>
-                <div
-                  className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer"
-                  onClick={() => deleteUser()}
-                >
+                <div className="flex items-center justify-between p-2 hover:bg-gray-700 cursor-pointer">
                   <div className="flex items-center">
                     <i className="fas fa-file-alt mr-2"></i>
                     <span>Delete User</span>
@@ -114,7 +115,25 @@ const Admin = () => {
           </nav>
         </aside>
 
-        <main className=" text-white w-[88%] min-h-screen p-4 mx-2"></main>
+        {/* Second section  - Right side of the page */}
+        <main className=" text-white w-[88%] min-h-screen p-4 mx-2">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Email"
+              className="block"
+            />
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 mt-4"
+            >
+              Submit
+            </button>
+          </form>
+        </main>
       </div>
     </div>
   );

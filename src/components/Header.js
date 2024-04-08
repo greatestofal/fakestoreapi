@@ -11,7 +11,7 @@ import { BsBag } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 //import logo
-import Logo from "../img/logo.svg";
+import Logo from "../img/thunderbolt.svg";
 
 const Header = () => {
   //header state
@@ -41,46 +41,31 @@ const Header = () => {
         {/* Other Links */}
         <div className="flex flex-row gap-12 ">
           {/* General Products */}
-          <Link
-            to={"/all-products"}
-            className="hover:bg-white hover:p-3 rounded font-bold"
-          >
+          <Link to={"/all-products"} className="rounded font-bold">
             <div className="font-bold mt-2">
               <h1> All Products</h1>
             </div>
           </Link>
           {/* Women Products */}
-          <Link
-            to={"/women-products"}
-            className="hover:bg-white hover:p-3 rounded font-bold"
-          >
+          <Link to={"/women-products"} className="rounded font-bold">
             <div className="font-bold mt-2">
               <h1> Women</h1>
             </div>
           </Link>
           {/* Men Products */}
-          <Link
-            to={"/men-products"}
-            className="hover:bg-white hover:p-3 rounded font-bold"
-          >
+          <Link to={"/men-products"} className="rounded font-bold">
             <div className="font-bold mt-2">
               <h1> Men </h1>
             </div>
           </Link>
           {/* Electronics */}
-          <Link
-            to={"/electronics"}
-            className="hover:bg-white hover:p-3 rounded font-bold"
-          >
+          <Link to={"/electronics"} className="rounded font-bold">
             <div className="font-bold mt-2">
               <h1> Electronics </h1>
             </div>
           </Link>
           {/* Jewelry */}
-          <Link
-            to={"/jewelries"}
-            className="hover:bg-white hover:p-3 rounded font-bold"
-          >
+          <Link to={"/jewelries"} className="rounded font-bold">
             <div className="font-bold mt-2">
               <h1> Jewelry </h1>
             </div>
