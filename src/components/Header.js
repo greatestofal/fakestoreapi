@@ -74,9 +74,9 @@ const Header = () => {
 
         {/* Admin */}
         <div className="justify-end">
-          <Link to={"/admin"}>
+          <Link to={"/login"}>
             <div className="font-bold mt-2">
-              <h1> Admin </h1>
+              <h1> Login </h1>
             </div>
           </Link>
         </div>
