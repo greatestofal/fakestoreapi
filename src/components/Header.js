@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 // sidebar context
 import { SidebarContext } from "../contexts/SidebarContext";
 
+import "../index.css";
+import { useMediaQuery } from "react-responsive";
+
 // cart context
 import { CartContext } from "../contexts/CartContext";
 
@@ -14,6 +17,7 @@ import { Link } from "react-router-dom";
 import Logo from "../img/thunderbolt.svg";
 
 const Header = () => {
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
   //header state
   const [isActive, setIsActive] = useState(false);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
@@ -32,7 +36,10 @@ const Header = () => {
     >
       <div className="container flex mx-auto flexitems-center justify-between h-full">
         {/* Logo */}
-        <Link to={"/"}>
+        <Link
+          to={"/"}
+          className={`rounded font-bold ${isSmallScreen && "hidden-on-small"}`}
+        >
           <div>
             <img className="w-[40px]" src={Logo} alt="" />
           </div>
@@ -47,26 +54,46 @@ const Header = () => {
             </div>
           </Link>
           {/* Women Products */}
-          <Link to={"/women-products"} className="rounded font-bold">
-            <div className="font-bold mt-2 sm:hidden">
+          <Link
+            to={"/women-products"}
+            className={`rounded font-bold ${
+              isSmallScreen && "hidden-on-small rounded font-bold"
+            }`}
+          >
+            <div className="font-bold mt-2">
               <h1> Women</h1>
             </div>
           </Link>
           {/* Men Products */}
-          <Link to={"/men-products"} className="rounded font-bold">
-            <div className="font-bold mt-2 sm:hidden">
+          <Link
+            to={"/men-products"}
+            className={`rounded font-bold ${
+              isSmallScreen && "hidden-on-small rounded font-bold"
+            }`}
+          >
+            <div className="font-bold mt-2">
               <h1> Men </h1>
             </div>
           </Link>
           {/* Electronics */}
-          <Link to={"/electronics"} className="rounded font-bold">
-            <div className="font-bold mt-2 sm:hidden">
+          <Link
+            to={"/electronics"}
+            className={`rounded font-bold ${
+              isSmallScreen && "hidden-on-small rounded font-bold"
+            }`}
+          >
+            <div className="font-bold mt-2">
               <h1> Electronics </h1>
             </div>
           </Link>
           {/* Jewelry */}
-          <Link to={"/jewelries"} className="rounded font-bold">
-            <div className="font-bold mt-2 sm:hidden">
+          <Link
+            to={"/jewelries"}
+            className={`rounded font-bold ${
+              isSmallScreen && "hidden-on-small rounded font-bold"
+            }`}
+          >
+            <div className="font-bold mt-2">
               <h1> Jewelry </h1>
             </div>
           </Link>
