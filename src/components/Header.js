@@ -43,30 +43,30 @@ const Header = () => {
           {/* General Products */}
           <Link to={"/all-products"} className="rounded font-bold">
             <div className="font-bold mt-2">
-              <h1> All Products</h1>
+              <h1> Products</h1>
             </div>
           </Link>
           {/* Women Products */}
           <Link to={"/women-products"} className="rounded font-bold">
-            <div className="font-bold mt-2">
+            <div className="font-bold mt-2 sm:hidden">
               <h1> Women</h1>
             </div>
           </Link>
           {/* Men Products */}
           <Link to={"/men-products"} className="rounded font-bold">
-            <div className="font-bold mt-2">
+            <div className="font-bold mt-2 sm:hidden">
               <h1> Men </h1>
             </div>
           </Link>
           {/* Electronics */}
           <Link to={"/electronics"} className="rounded font-bold">
-            <div className="font-bold mt-2">
+            <div className="font-bold mt-2 sm:hidden">
               <h1> Electronics </h1>
             </div>
           </Link>
           {/* Jewelry */}
           <Link to={"/jewelries"} className="rounded font-bold">
-            <div className="font-bold mt-2">
+            <div className="font-bold mt-2 sm:hidden">
               <h1> Jewelry </h1>
             </div>
           </Link>
